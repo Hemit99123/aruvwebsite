@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h1>Add entry</h1>
+    <form action="/add" method="POST">
+        <div>
+            <label>Blog</label>
+            <input  name="information"  id="information" required: required>
+        </div>
+        <div>
+            <label>Date</label>
+            <input type="date" name="date"  id="date" required: required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Blog</th>
+        <th scope="col">Date</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+    <%viewsList.forEach(view => {%>
+        <tr>
+            <th scope="row"><%= view.information%></th>
+            <th scope="row"><%= view.date%></th>
+          
+        </tr>
+    <%})%>
+    </tbody>
+  </table>
